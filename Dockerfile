@@ -1,7 +1,6 @@
-FROM debian:stable-slim
+FROM alpine:edge
 
-RUN apt-get update && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -yq ca-certificates ddclient && \
-    rm -rf /var/cache/apt /var/lib/apt/lists/*
+RUN echo http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories && \
+    apk add --no-cache --update ddclient
 
 ENTRYPOINT ["ddclient", "-daemon=300", "-foreground", "-verbose"]

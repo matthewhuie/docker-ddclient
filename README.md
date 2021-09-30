@@ -1,5 +1,5 @@
 # matthewhuie/ddclient
-This is a Docker container that provides a lightweight and generic ddclient instance, based on a slimmed down Debian. It provides the latest version of ddclient, running on the latest stable version of Debian. This repository currently builds for multi-arch: ARMv7, ARM64, and AMD64.
+This is a Docker container that provides a lightweight and generic ddclient instance, based on Alpine Linux. It provides the latest version of ddclient, running on the edge version of Alpine Linux. This repository currently builds for multi-arch: ARMv7, ARM64, and AMD64.
 
 ![buildx](https://github.com/matthewhuie/docker-ddclient/workflows/buildx/badge.svg?branch=main)
 
@@ -19,7 +19,7 @@ Keep in mind, this is a barebones instance of ddclient, allowing more flexibilit
 For example, an existing ddclient.conf could be used.
 ```bash
 docker run -d \
-  -v /etc/ddclient.conf:/etc/ddclient.conf:ro \
+  -v /etc/ddclient.conf:/etc/ddclient/ddclient.conf:ro \
   matthewhuie/ddclient
 ```
 
