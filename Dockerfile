@@ -1,6 +1,11 @@
-FROM alpine:edge
+FROM alpine:latest
 
-RUN echo http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories && \
-    apk add --no-cache --update ddclient
+RUN apk add --no-cache --update autoconf automake git make perl-io-socket-ssl && \
+    git clone https://github.com/ddclient/ddclient.git && \
+    cd ddclient && \
+    ./autogen && \
+    ./configure --prefix=/usr --sysconfdir=/etc/ddclient --localstatedir=/var && \
+    make && \
+    make install
 
 ENTRYPOINT ["ddclient", "-daemon=300", "-foreground", "-verbose"]
