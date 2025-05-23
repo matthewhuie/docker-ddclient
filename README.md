@@ -1,7 +1,7 @@
 # matthewhuie/ddclient
 This is a Docker container that provides a lightweight and generic ddclient instance, based on Alpine Linux. It provides the latest version of ddclient via apk. This repository currently builds for multi-arch: ARMv7, ARM64, and AMD64.
 
-![buildx](https://github.com/matthewhuie/docker-ddclient/workflows/buildx/badge.svg?branch=main)
+![buildx](https://github.com/matthewhuie/docker-ddclient/workflows/docker-buildx/badge.svg?branch=main)
 
 ## Getting Started
 Pull the image from Docker Hub.
